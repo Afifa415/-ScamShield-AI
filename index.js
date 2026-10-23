@@ -363,8 +363,13 @@ app.get("/api/history", (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`ScamShield AI running at http://localhost:${PORT}`);
+app.get("/", (req, res) => {
+  res.sendFile(path.join(__dirname, "public", "index.html"));
+});
+const HOST = "0.0.0.0";
+
+app.listen(PORT, HOST, () => {
+  console.log(`ScamShield AI running on port ${PORT}`);
   console.log(`Configured model: ${MODEL}`);
   console.log(`Gemma API key configured: ${Boolean(apiKey)}`);
 });
