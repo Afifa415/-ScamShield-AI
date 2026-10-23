@@ -1,0 +1,461 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="ScamShield AI helps assess suspicious messages and phishing URLs with AI-powered analysis and security heuristics.">
+  <title>ScamShield AI — Check Before You Click</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/script.js" defer></script>
+</head>
+<body>
+  <div class="announcement">
+    <span class="announcement-dot"></span>
+    AI-POWERED DIGITAL SECURITY
+    <span class="announcement-divider">/</span>
+    Think before you trust.
+  </div>
+
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="ScamShield AI home">
+      <span class="brand-icon">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 3L34 9V19C34 28 28 34 20 38C12 34 6 28 6 19V9L20 3Z"
+            stroke="currentColor" stroke-width="2"/>
+          <path d="M13 20L18 25L28 14" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>ScamShield<span class="brand-ai">.AI</span></span>
+    </a>
+
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#scanner">Message Scanner</a>
+      <a href="#url-scanner">URL Scanner</a>
+      <a href="#recent-history">Recent checks</a>
+      <a href="#about-model">About AI</a>
+    </nav>
+
+    <a class="nav-cta" href="#scanner">
+      Analyze a message <span aria-hidden="true">↗</span>
+    </a>
+
+    <button class="menu-toggle" id="menuToggle"
+      aria-label="Toggle navigation" aria-expanded="false">
+      <span></span><span></span>
+    </button>
+  </header>
+
+  <main>
+    <!-- HERO SECTION -->
+    <section class="hero section-shell" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow">
+          <span class="status-dot"></span>
+          YOUR FIRST LINE OF DIGITAL DEFENSE
+        </div>
+
+        <h1>
+          Don't trust the message.<br>
+          <span class="gradient-text">Understand the risk.</span>
+        </h1>
+
+        <p class="hero-description">
+          Check suspicious job offers, prize notifications, phishing messages,
+          and suspicious website links. Understand warning signs before you act.
+        </p>
+
+        <div class="hero-actions">
+          <a class="button button-primary" href="#scanner">
+            Analyze a message <span aria-hidden="true">↘</span>
+          </a>
+          <a class="button button-secondary" href="#url-scanner">
+            Scan a URL <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="hero-proof">
+          <div class="proof-icon">✳</div>
+          <div>
+            <strong>Evidence-focused analysis</strong>
+            <span>Understand why a message or link may be risky.</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="AI security illustration">
+        <div class="visual-grid"></div>
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+
+        <div class="visual-label">
+          <span class="status-dot"></span> DIGITAL THREAT ANALYSIS
+        </div>
+
+        <div class="shield-visual">
+          <svg viewBox="0 0 220 250" fill="none" aria-hidden="true">
+            <path d="M110 12L191 45V103C191 160 158 204 110 232C62 204 29 160 29 103V45L110 12Z"
+              fill="#0b1c31" stroke="#44d9ee" stroke-width="2"/>
+            <path d="M110 29L176 56V103C176 150 149 187 110 211C71 187 44 150 44 103V56L110 29Z"
+              stroke="#1d8caa" stroke-width="1.5"/>
+            <path d="M110 63L123 92L155 96L132 118L138 150L110 134L82 150L88 118L65 96L97 92L110 63Z"
+              fill="#123b53" stroke="#59e5f1" stroke-width="2"/>
+            <circle cx="110" cy="106" r="12" fill="#48dbea"/>
+            <path d="M104 106L108 110L116 101" stroke="#082033"
+              stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+
+        <div class="floating-card card-signal">
+          <span class="signal-icon">⌁</span>
+          <span><strong>Threat signals</strong><small>Evidence-based review</small></span>
+          <span class="signal-pulse"></span>
+        </div>
+
+        <div class="floating-card card-engine">
+          <span class="engine-icon">✳</span>
+          <span><strong>Gemma AI</strong><small>Message analysis</small></span>
+          <span class="engine-live">READY</span>
+        </div>
+
+        <div class="visual-caption">
+          <span>01 / DETECT</span>
+          <span>02 / EXPLAIN</span>
+          <span>03 / ACT</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SCANNER WORKSPACE -->
+    <section class="scanner-section section-shell" id="scanner">
+      <div class="scanner-heading">
+        <div>
+          <div class="eyebrow">
+            <span class="status-dot"></span> SECURITY WORKSPACE
+          </div>
+          <h2>Investigate before you trust.</h2>
+          <p>
+            Analyze suspicious messages with Gemma AI or inspect links for
+            common phishing indicators.
+          </p>
+        </div>
+
+        <div class="workspace-model">
+          <span class="model-orb">✳</span>
+          <span><strong>Gemma AI engine</strong><small>Message analysis</small></span>
+          <span class="status-dot"></span>
+        </div>
+      </div>
+
+      <!-- PHISHING URL SCANNER -->
+      <section class="scanner-panel url-scanner-panel" id="url-scanner">
+        <div class="panel-heading">
+          <div>
+            <span class="panel-kicker">SECURITY TOOL 02</span>
+            <h3>Phishing URL Scanner</h3>
+          </div>
+          <span class="panel-icon" aria-hidden="true">↗</span>
+        </div>
+
+        <p class="url-scanner-description">
+          Check a suspicious link for common warning signs before opening it.
+          ScamShield examines the URL structure without visiting the website.
+        </p>
+
+        <form id="urlScanForm">
+          <label for="urlInput">Suspicious website URL</label>
+
+          <div class="url-input-row">
+            <input
+              type="url"
+              id="urlInput"
+              name="url"
+              maxlength="2048"
+              placeholder="https://example.com/login"
+              autocomplete="url"
+              spellcheck="false"
+              required
+            >
+
+            <button
+              class="button button-primary"
+              type="submit"
+              id="urlScanButton"
+            >
+              <span id="urlScanButtonText">Scan URL</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+          </div>
+
+          <div class="input-meta">
+            <span>HTTP/HTTPS links · Maximum 2,048 characters</span>
+            <span>Local heuristic scan</span>
+          </div>
+
+          <p class="form-note">
+            Never enter passwords, OTPs, or other private information.
+          </p>
+
+          <p id="urlScanStatus" class="form-status"
+            role="status" aria-live="polite"></p>
+        </form>
+
+        <div id="urlScanResults" class="url-scan-results" hidden>
+          <div class="url-result-top">
+            <div class="url-risk-indicator" id="urlRiskIndicator"
+              data-risk="LOW">
+              <span>RISK LEVEL</span>
+              <strong id="urlRiskLevel">LOW</strong>
+            </div>
+
+            <div class="url-result-summary">
+              <span class="result-label">SCANNED HOST</span>
+              <h4 id="urlHostname">—</h4>
+              <p id="urlScore">Heuristic score: 0</p>
+              <span id="urlProtocol" class="url-protocol"></span>
+            </div>
+          </div>
+
+          <div class="result-block">
+            <div class="result-block-heading">
+              <h4>Detected indicators</h4>
+              <span class="result-count" id="urlIndicatorCount">0 signals</span>
+            </div>
+
+            <div id="urlIndicators" class="evidence-list"></div>
+          </div>
+
+          <p id="urlDisclaimer" class="disclaimer">
+            A heuristic assessment cannot prove that a URL is safe or malicious.
+          </p>
+        </div>
+      </section>
+
+      <!-- EXISTING GEMMA MESSAGE ANALYZER -->
+      <div class="scanner-layout">
+        <section class="scanner-panel input-panel">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">SECURITY TOOL 01</span>
+              <h3>Analyze a message</h3>
+            </div>
+            <span class="panel-icon">⌘</span>
+          </div>
+
+          <form id="analysisForm">
+            <label for="messageInput">Suspicious message</label>
+
+            <textarea
+              id="messageInput"
+              name="message"
+              rows="8"
+              maxlength="6000"
+              required
+              placeholder="Paste a suspicious WhatsApp, SMS, email, or job offer here..."
+            ></textarea>
+
+            <div class="input-meta">
+              <span>Text only · Maximum 6,000 characters</span>
+              <span id="characterCount">0 / 6000</span>
+            </div>
+
+            <div class="sample-messages">
+              <span class="sample-label">OR TRY A SAMPLE</span>
+              <button type="button" class="sample-button" data-sample="job">Fake job offer</button>
+              <button type="button" class="sample-button" data-sample="prize">Prize / OTP</button>
+              <button type="button" class="sample-button" data-sample="ambiguous">Ambiguous message</button>
+            </div>
+
+            <button class="button button-primary analyze-button"
+              type="submit" id="analyzeButton">
+              <span id="analyzeButtonText">Analyze with Gemma AI</span>
+              <span aria-hidden="true">↗</span>
+            </button>
+
+            <p class="form-note">
+              AI can make mistakes. Independently verify important claims.
+            </p>
+            <p id="formStatus" class="form-status"
+              role="status" aria-live="polite"></p>
+          </form>
+        </section>
+
+        <!-- EXISTING MESSAGE RESULTS -->
+        <section class="scanner-panel results-panel" id="resultsPanel" aria-live="polite">
+          <div class="panel-heading">
+            <div>
+              <span class="panel-kicker">ANALYSIS REPORT</span>
+              <h3>Your message analysis</h3>
+            </div>
+            <span class="report-status" id="reportStatus">AWAITING INPUT</span>
+          </div>
+
+          <div id="emptyState" class="empty-state">
+            <div class="empty-illustration">
+              <svg viewBox="0 0 120 120" fill="none" aria-hidden="true">
+                <rect x="24" y="14" width="72" height="92" rx="9"
+                  fill="#101d31" stroke="#24506b"/>
+                <path d="M40 38H80M40 51H72M40 64H67"
+                  stroke="#4c7993" stroke-width="3" stroke-linecap="round"/>
+                <path d="M74 77L82 85L98 67"
+                  stroke="#50d8e8" stroke-width="4" stroke-linecap="round"
+                  stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3>Your report will appear here</h3>
+            <p>Submit a message to see its risk level, warning signs, and recommended actions.</p>
+            <div class="empty-checks">
+              <span><span class="mini-dot"></span> Risk assessment</span>
+              <span><span class="mini-dot"></span> Evidence</span>
+              <span><span class="mini-dot"></span> Next steps</span>
+            </div>
+          </div>
+
+          <div id="analysisResults" hidden>
+            <div class="risk-overview">
+              <div class="risk-gauge" id="riskGauge" data-risk="UNKNOWN">
+                <div class="risk-gauge-inner">
+                  <span class="risk-gauge-label">RISK LEVEL</span>
+                  <strong id="riskLevel">—</strong>
+                </div>
+              </div>
+
+              <div class="risk-summary">
+                <span class="result-label">ASSESSMENT CATEGORY</span>
+                <h3 id="scamCategory">Analysis pending</h3>
+                <p id="analysisSummary"></p>
+              </div>
+            </div>
+
+            <div class="result-block">
+              <div class="result-block-heading">
+                <h4>Warning signs</h4>
+                <span class="result-count" id="warningCount">0 signals</span>
+              </div>
+              <div id="warningSigns" class="evidence-list"></div>
+            </div>
+
+            <div class="result-block">
+              <div class="result-block-heading">
+                <h4>Recommended actions</h4>
+              </div>
+              <ol id="recommendedActions" class="action-list"></ol>
+            </div>
+
+            <details class="complexity-card">
+              <summary>Technical details · Complexity and uncertainty</summary>
+
+              <div class="complexity-content">
+                <div class="complexity-top">
+                  <div>
+                    <span class="result-label">ESTIMATED TASK COMPLEXITY</span>
+                    <h4 id="complexityLevel">—</h4>
+                  </div>
+                  <div id="complexityMeter" class="complexity-meter" data-level="UNKNOWN">
+                    <span></span><span></span><span></span>
+                  </div>
+                </div>
+
+                <p id="complexityReason"></p>
+                <p class="complexity-note">
+                  This estimates task difficulty, not measured model capability.
+                </p>
+
+                <div class="uncertainty-card">
+                  <span class="uncertainty-icon">i</span>
+                  <div>
+                    <h4>What remains uncertain?</h4>
+                    <p id="uncertaintyText"></p>
+                  </div>
+                </div>
+              </div>
+            </details>
+
+            <div class="disclaimer" id="disclaimerText">
+              AI risk assessment is not proof of fraud.
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <!-- RECENT MESSAGE HISTORY -->
+      <section class="scanner-panel history-panel" id="recent-history">
+        <div class="panel-heading">
+          <div>
+            <span class="panel-kicker">YOUR RECENT CHECKS</span>
+            <h3>Recent investigations</h3>
+          </div>
+          <button class="text-button" type="button" id="refreshHistory">Refresh ↻</button>
+        </div>
+
+        <div id="historyList" class="history-list">
+          <p class="history-empty">Your recent analyses will appear here.</p>
+        </div>
+      </section>
+    </section>
+
+    <!-- AI TRANSPARENCY -->
+    <section class="engine-section section-shell" id="about-model">
+      <div class="engine-copy">
+        <div class="eyebrow">AI TRANSPARENCY</div>
+        <h2>Understand the engine.<br><span class="gradient-text">Not just the answer.</span></h2>
+        <p>
+          ScamShield uses a configured Gemma model to assess message text
+          and heuristic rules to inspect URL structures. Results are indicators,
+          not proof of fraud or website legitimacy.
+        </p>
+        <a class="text-link" href="#scanner">Check a message ↗</a>
+        <a class="text-link" href="#url-scanner">Inspect a URL ↗</a>
+      </div>
+
+      <details class="engine-details">
+        <summary>Technical details · Models and limitations</summary>
+        <div class="engine-detail-content">
+          <div class="engine-detail-row">
+            <span>MESSAGE MODEL FAMILY</span>
+            <strong>Gemma</strong>
+          </div>
+          <div class="engine-detail-row">
+            <span>CONFIGURED MODEL</span>
+            <strong id="modelName">Loading model info...</strong>
+          </div>
+          <div class="engine-detail-row">
+            <span>MESSAGE ANALYSIS SKILL</span>
+            <strong><span class="status-dot"></span> Scam analysis</strong>
+          </div>
+          <div class="engine-detail-row">
+            <span>URL SCANNER</span>
+            <strong>Rule-based heuristics</strong>
+          </div>
+          <p class="engine-disclaimer">
+            The URL scanner does not visit submitted websites or check a live
+            threat-intelligence database. HTTPS does not guarantee legitimacy.
+            Model outputs and heuristic assessments may be wrong. Verify important
+            findings independently.
+          </p>
+        </div>
+      </details>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home">
+      <span class="brand-icon">
+        <svg viewBox="0 0 40 40" fill="none" aria-hidden="true">
+          <path d="M20 3L34 9V19C34 28 28 34 20 38C12 34 6 28 6 19V9L20 3Z"
+            stroke="currentColor" stroke-width="2"/>
+          <path d="M13 20L18 25L28 14" stroke="currentColor"
+            stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      </span>
+      <span>ScamShield<span class="brand-ai">.AI</span></span>
+    </a>
+
+    <p>Built to support safer digital decisions.</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+</body>
+</html>

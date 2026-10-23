@@ -1,0 +1,66 @@
+[
+  {
+    "id": 1792802869858,
+    "createdAt": "2026-10-24T00:47:49.858Z",
+    "riskLevel": "CRITICAL",
+    "scamCategory": "Fake prize and credential theft",
+    "analysisComplexity": "LOW",
+    "messagePreview": "Mubarak ho! Apka prize ready hai. Prize receive karne ke liye apna OTP aur bank details send karein. Offer sirf 10 minut"
+  },
+  {
+    "id": 1792802601959,
+    "createdAt": "2026-10-24T00:43:21.959Z",
+    "riskLevel": "CRITICAL",
+    "scamCategory": "Fake prize and credential theft",
+    "analysisComplexity": "LOW",
+    "messagePreview": "Mubarak ho! Apka prize ready hai. Prize receive karne ke liye apna OTP aur bank details send karein. Offer sirf 10 minut"
+  },
+  {
+    "id": 1792802000544,
+    "createdAt": "2026-10-24T00:33:20.544Z",
+    "riskLevel": "CRITICAL",
+    "scamCategory": "Fake prizes and phishing for sensitive information",
+    "analysisComplexity": "LOW",
+    "messagePreview": "Mubarak ho! Apka prize ready hai. Prize receive karne ke liye apna OTP aur bank details send karein. Offer sirf 10 minut"
+  },
+  {
+    "id": 1792800878068,
+    "createdAt": "2026-10-24T00:14:38.068Z",
+    "riskLevel": "CRITICAL",
+    "scamCategory": "Phishing / Prize Scam",
+    "analysisComplexity": "LOW",
+    "messagePreview": "Mubarak ho! Apka prize ready hai. Prize receive karne ke liye apna OTP aur bank details send karein. Offer sirf 10 minut"
+  },
+  {
+    "id": 1792800423286,
+    "createdAt": "2026-10-24T00:07:03.286Z",
+    "riskLevel": "LOW",
+    "scamCategory": "none identified",
+    "analysisComplexity": "LOW",
+    "messagePreview": "Hello, we reviewed your application and would like to arrange an interview next week. Please reply with your available d"
+  },
+  {
+    "id": 1792799533846,
+    "createdAt": "2026-10-23T23:52:13.846Z",
+    "riskLevel": "MEDIUM",
+    "scamCategory": "Account Takeover Attempt",
+    "analysisComplexity": "LOW",
+    "messagePreview": "It looks like this message is in Portuguese\nToque neste link para confirmar sua conta neste aparelho: https://v.whatsapp"
+  },
+  {
+    "id": 1792798186129,
+    "createdAt": "2026-10-23T23:29:46.129Z",
+    "riskLevel": "CRITICAL",
+    "scamCategory": "Phishing / Identity Theft",
+    "analysisComplexity": "LOW",
+    "messagePreview": "Mubarak ho! Apka prize ready hai. Prize receive karne ke liye apna OTP aur bank details send karein."
+  },
+  {
+    "id": 1792798084150,
+    "createdAt": "2026-10-23T23:28:04.150Z",
+    "riskLevel": "CRITICAL",
+    "scamCategory": "Advance-fee / Fake Job Offer",
+    "analysisComplexity": "LOW",
+    "messagePreview": "Congratulations! You got a remote job paying Rs. 80,000 per month. Pay Rs. 2,000 registration fee today to activate your"
+  }
+]
