@@ -1,9 +1,8 @@
-
+```javascript
 const express = require("express");
 const dotenv = require("dotenv");
 const fs = require("fs");
 const path = require("path");
-const { GoogleGenAI } = require("@google/genai");
 
 dotenv.config();
 
@@ -16,9 +15,20 @@ app.use(express.static(path.join(__dirname, "public")));
 
 const apiKey = process.env.GEMMA_API_KEY;
 
-const ai = apiKey
-  ? new GoogleGenAI({ apiKey })
-  : null;
+let ai = null;
+
+async function getAI() {
+  if (!apiKey) {
+    return null;
+  }
+
+  if (!ai) {
+    const { GoogleGenAI } = await import("@google/genai");
+    ai = new GoogleGenAI({ apiKey });
+  }
+
+  return ai;
+}
 
 const skillPath = path.join(
   __dirname,
@@ -59,10 +69,12 @@ app.post("/api/analyze", async (req, res) => {
       });
     }
 
-    if (!ai) {
+    const aiClient = await getAI();
+
+    if (!aiClient) {
       return res.status(500).json({
         success: false,
-        message: "GEMMA_API_KEY is missing from your .env file."
+        message: "GEMMA_API_KEY is missing from your environment variables."
       });
     }
 
@@ -105,7 +117,7 @@ empty warningSigns array. Explain uncertainty honestly.
 
     const startTime = Date.now();
 
-    const response = await ai.models.generateContent({
+    const response = await aiClient.models.generateContent({
       model: MODEL,
       contents: prompt
     });
@@ -113,7 +125,6 @@ empty warningSigns array. Explain uncertainty honestly.
     const elapsedMs = Date.now() - startTime;
     const raw = response.text || "";
 
-    // Extract JSON in case the model wraps it in a code fence.
     const cleaned = raw
       .replace(/^```(?:json)?\s*/i, "")
       .replace(/\s*```$/, "")
@@ -150,16 +161,23 @@ empty warningSigns array. Explain uncertainty honestly.
 
       if (fs.existsSync(historyPath)) {
         history = JSON.parse(fs.readFileSync(historyPath, "utf8"));
-        if (!Array.isArray(history)) history = [];
+
+        if (!Array.isArray(history)) {
+          history = [];
+        }
       }
 
       history.unshift(record);
+
       fs.writeFileSync(
         historyPath,
         JSON.stringify(history.slice(0, 20), null, 2)
       );
     } catch (historyError) {
-      console.error("History could not be saved:", historyError.message);
+      console.error(
+        "History could not be saved:",
+        historyError.message
+      );
     }
 
     res.json({
@@ -216,7 +234,10 @@ function inspectUrl(rawUrl) {
 
   function addIndicator(points, title, explanation) {
     score += points;
-    indicators.push({ title, explanation });
+    indicators.push({
+      title,
+      explanation
+    });
   }
 
   // HTTPS is useful, but does not prove a site is trustworthy.
@@ -238,7 +259,8 @@ function inspectUrl(rawUrl) {
 
   // IP-address hosts can be used in suspicious links.
   const isIPv4 = /^(?:\d{1,3}\.){3}\d{1,3}$/.test(hostname);
-  const isIPv6 = hostname.startsWith("[") && hostname.endsWith("]");
+  const isIPv6 =
+    hostname.startsWith("[") && hostname.endsWith("]");
 
   if (isIPv4 || isIPv6) {
     addIndicator(
@@ -341,10 +363,17 @@ app.post("/api/scan-url", (req, res) => {
 
 app.get("/api/history", (req, res) => {
   try {
-    const historyPath = path.join(__dirname, "data", "history.json");
+    const historyPath = path.join(
+      __dirname,
+      "data",
+      "history.json"
+    );
 
     if (!fs.existsSync(historyPath)) {
-      return res.json({ success: true, history: [] });
+      return res.json({
+        success: true,
+        history: []
+      });
     }
 
     const history = JSON.parse(
@@ -353,7 +382,9 @@ app.get("/api/history", (req, res) => {
 
     res.json({
       success: true,
-      history: Array.isArray(history) ? history.slice(0, 20) : []
+      history: Array.isArray(history)
+        ? history.slice(0, 20)
+        : []
     });
   } catch {
     res.status(500).json({
@@ -364,12 +395,20 @@ app.get("/api/history", (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "public", "index.html"));
+  res.sendFile(
+    path.join(__dirname, "public", "index.html")
+  );
 });
+
 const HOST = "0.0.0.0";
 
 app.listen(PORT, HOST, () => {
-  console.log(`ScamShield AI running on port ${PORT}`);
+  console.log(
+    `ScamShield AI running on ${HOST}:${PORT}`
+  );
   console.log(`Configured model: ${MODEL}`);
-  console.log(`Gemma API key configured: ${Boolean(apiKey)}`);
+  console.log(
+    `Gemma API key configured: ${Boolean(apiKey)}`
+  );
 });
+```
